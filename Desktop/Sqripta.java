@@ -122,42 +122,22 @@ public class Sqripta
 
 //attack intersperse
                String attack="";
-               String comment="";
                if (attacksOn=true) {
                   attackProb=gen.nextInt(attackInterval);
                   if (attackProb==0 || attackDesperation==true) {
                      attackCount++;
                      int attackType=gen.nextInt(3);
-                     int commentType=gen.nextInt(2);
                      switch (attackType) {
                         case 0: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'1\'=\'1\' "+comment;
+                           attack=" or \'1\'=\'1\' --";
                            break;
                         }
                         case 1: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'a\'=\'a\' "+comment;
+                           attack=" or \'a\'=\'a\' --";
                            break;
                         }
                         case 2: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" waitfor delay \'00:00:10\' "+comment;
+                           attack=" waitfor delay \'00:00:10\' --";
                            break;
                         }
                      }
@@ -324,42 +304,22 @@ public class Sqripta
 
 //attack intersperse
                String attack="";
-               String comment="";
                if (attacksOn=true) {
                   attackProb=gen.nextInt(attackInterval);
                   if (attackProb==0 || attackDesperation==true) {
                      attackCount++;
                      int attackType=gen.nextInt(3);
-                     int commentType=gen.nextInt(2);
                      switch (attackType) {
                         case 0: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'1\'=\'1\' "+comment;
+                           attack=" or \'1\'=\'1\' --";
                            break;
                         }
                         case 1: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'a\'=\'a\' "+comment;
+                           attack=" or \'a\'=\'a\' --";
                            break;
                         }
                         case 2: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" waitfor delay \'00:00:10\' "+comment;
+                           attack=" waitfor delay \'00:00:10\' --";
                            break;
                         }
                      }
@@ -490,6 +450,8 @@ public class Sqripta
                   }
                   
                }
+
+//write
                writer.println("SELECT "+column1+" FROM "+table1+" WHERE "+column2+attack+not+" IN ("+value1+","+value2+");");
                writer.println("GO");
 
@@ -532,42 +494,22 @@ public class Sqripta
 
 //attack intersperse
                String attack="";
-               String comment="";
                if (attacksOn=true) {
                   attackProb=gen.nextInt(attackInterval);
                   if (attackProb==0 || attackDesperation==true) {
                      attackCount++;
                      int attackType=gen.nextInt(3);
-                     int commentType=gen.nextInt(2);
                      switch (attackType) {
                         case 0: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'1\'=\'1\' "+comment;
+                           attack=" or \'1\'=\'1\' --";
                            break;
                         }
                         case 1: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'a\'=\'a\' "+comment;
+                           attack=" or \'a\'=\'a\' --";
                            break;
                         }
                         case 2: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" waitfor delay \'00:00:10\' "+comment;
+                           attack=" waitfor delay \'00:00:10\' --";
                            break;
                         }
                      }
@@ -662,42 +604,22 @@ public class Sqripta
 
 //attack intersperse
                String attack="";
-               String comment="";
                if (attacksOn=true) {
                   attackProb=gen.nextInt(attackInterval);
                   if (attackProb==0 || attackDesperation==true) {
                      attackCount++;
                      int attackType=gen.nextInt(3);
-                     int commentType=gen.nextInt(2);
                      switch (attackType) {
                         case 0: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'1\'=\'1\' "+comment;
+                           attack=" or \'1\'=\'1\' --";
                            break;
                         }
                         case 1: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'a\'=\'a\' "+comment;
+                           attack=" or \'a\'=\'a\' --";
                            break;
                         }
                         case 2: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" waitfor delay \'00:00:10\' "+comment;
+                           attack=" waitfor delay \'00:00:10\' --";
                            break;
                         }
                      }
@@ -766,42 +688,22 @@ public class Sqripta
 
 //attack intersperse
                String attack="";
-               String comment="";
                if (attacksOn=true) {
                   attackProb=gen.nextInt(attackInterval);
                   if (attackProb==0 || attackDesperation==true) {
                      attackCount++;
                      int attackType=gen.nextInt(3);
-                     int commentType=gen.nextInt(2);
                      switch (attackType) {
                         case 0: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'1\'=\'1\' "+comment;
+                           attack=" or \'1\'=\'1\' --";
                            break;
                         }
                         case 1: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'a\'=\'a\' "+comment;
+                           attack=" or \'a\'=\'a\' --";
                            break;
                         }
                         case 2: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" waitfor delay \'00:00:10\' "+comment;
+                           attack=" waitfor delay \'00:00:10\' --";
                            break;
                         }
                      }
@@ -851,6 +753,33 @@ public class Sqripta
                }
                String column1 = getString(charList);
 
+//attack intersperse
+               String attack="";
+               if (attacksOn=true) {
+                  attackProb=gen.nextInt(attackInterval);
+                  if (attackProb==0 || attackDesperation==true) {
+                     attackCount++;
+                     int attackType=gen.nextInt(3);
+                     switch (attackType) {
+                        case 0: {
+                           attack=" or \'1\'=\'1\' --";
+                           break;
+                        }
+                        case 1: {
+                           attack=" or \'a\'=\'a\' --";
+                           break;
+                        }
+                        case 2: {
+                           attack=" waitfor delay \'00:00:10\' --";
+                           break;
+                        }
+                     }
+                  }
+               }
+               else {
+               attack="";
+               }
+
 //table1               
                placer=34;
                charList = new ArrayList<Character>();
@@ -864,7 +793,7 @@ public class Sqripta
                String table1 = getString(charList);
 
 //write
-               writer.println("SELECT "+column1+" NOW() FROM "+table1+";");
+               writer.println("SELECT "+column1+" NOW() FROM "+table1+attack+";");
                writer.println("GO");
 
                break;
@@ -902,6 +831,33 @@ public class Sqripta
                int num2=gen.nextInt(566);
                String line2=lines[num2];
 
+//attack intersperse
+               String attack="";
+               if (attacksOn=true) {
+                  attackProb=gen.nextInt(attackInterval);
+                  if (attackProb==0 || attackDesperation==true) {
+                     attackCount++;
+                     int attackType=gen.nextInt(3);
+                     switch (attackType) {
+                        case 0: {
+                           attack=" or \'1\'=\'1\' --";
+                           break;
+                        }
+                        case 1: {
+                           attack=" or \'a\'=\'a\' --";
+                           break;
+                        }
+                        case 2: {
+                           attack=" waitfor delay \'00:00:10\' --";
+                           break;
+                        }
+                     }
+                  }
+               }
+               else {
+               attack="";
+               }
+
 //column1
                placer = 68;
                charList = new ArrayList<Character>();
@@ -918,7 +874,7 @@ public class Sqripta
                int numDecimals=gen.nextInt(3);
 
 //write
-               writer.println("SELECT "+column1+", ROUND("+column2+","+numDecimals+") FROM "+table1+";");
+               writer.println("SELECT "+column1+attack+", ROUND("+column2+","+numDecimals+") FROM "+table1+";");
                writer.println("GO");
 
                break;
@@ -941,42 +897,22 @@ public class Sqripta
 
 //attack intersperse
                String attack="";
-               String comment="";
                if (attacksOn=true) {
                   attackProb=gen.nextInt(attackInterval);
                   if (attackProb==0 || attackDesperation==true) {
                      attackCount++;
                      int attackType=gen.nextInt(3);
-                     int commentType=gen.nextInt(2);
                      switch (attackType) {
                         case 0: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'1\'=\'1\' "+comment;
+                           attack=" or \'1\'=\'1\' --";
                            break;
                         }
                         case 1: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'a\'=\'a\' "+comment;
+                           attack=" or \'a\'=\'a\' --";
                            break;
                         }
                         case 2: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" waitfor delay \'00:00:10\' "+comment;
+                           attack=" waitfor delay \'00:00:10\' --";
                            break;
                         }
                      }
@@ -1052,42 +988,22 @@ public class Sqripta
 
 //attack intersperse
                String attack="";
-               String comment="";
                if (attacksOn=true) {
                   attackProb=gen.nextInt(attackInterval);
                   if (attackProb==0 || attackDesperation==true) {
                      attackCount++;
                      int attackType=gen.nextInt(3);
-                     int commentType=gen.nextInt(2);
                      switch (attackType) {
                         case 0: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'1\'=\'1\' "+comment;
+                           attack=" or \'1\'=\'1\' --";
                            break;
                         }
                         case 1: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'a\'=\'a\' "+comment;
+                           attack=" or \'a\'=\'a\' --";
                            break;
                         }
                         case 2: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" waitfor delay \'00:00:10\' "+comment;
+                           attack=" waitfor delay \'00:00:10\' --";
                            break;
                         }
                      }
@@ -1140,42 +1056,22 @@ public class Sqripta
 
 //attack intersperse
                String attack="";
-               String comment="";
                if (attacksOn=true) {
                   attackProb=gen.nextInt(attackInterval);
                   if (attackProb==0 || attackDesperation==true) {
                      attackCount++;
                      int attackType=gen.nextInt(3);
-                     int commentType=gen.nextInt(2);
                      switch (attackType) {
                         case 0: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'1\'=\'1\' "+comment;
+                           attack=" or \'1\'=\'1\' --";
                            break;
                         }
                         case 1: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'a\'=\'a\' "+comment;
+                           attack=" or \'a\'=\'a\' --";
                            break;
                         }
                         case 2: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" waitfor delay \'00:00:10\' "+comment;
+                           attack=" waitfor delay \'00:00:10\' --";
                            break;
                         }
                      }
@@ -1223,42 +1119,22 @@ public class Sqripta
 
 //attack intersperse
                String attack="";
-               String comment="";
                if (attacksOn=true) {
                   attackProb=gen.nextInt(attackInterval);
                   if (attackProb==0 || attackDesperation==true) {
                      attackCount++;
                      int attackType=gen.nextInt(3);
-                     int commentType=gen.nextInt(2);
                      switch (attackType) {
                         case 0: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'1\'=\'1\' "+comment;
+                           attack=" or \'1\'=\'1\' --";
                            break;
                         }
                         case 1: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'a\'=\'a\' "+comment;
+                           attack=" or \'a\'=\'a\' --";
                            break;
                         }
                         case 2: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" waitfor delay \'00:00:10\' "+comment;
+                           attack=" waitfor delay \'00:00:10\' --";
                            break;
                         }
                      }
@@ -1306,42 +1182,22 @@ public class Sqripta
 
 //attack intersperse
                String attack="";
-               String comment="";
                if (attacksOn=true) {
                   attackProb=gen.nextInt(attackInterval);
                   if (attackProb==0 || attackDesperation==true) {
                      attackCount++;
                      int attackType=gen.nextInt(3);
-                     int commentType=gen.nextInt(2);
                      switch (attackType) {
                         case 0: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'1\'=\'1\' "+comment;
+                           attack=" or \'1\'=\'1\' --";
                            break;
                         }
                         case 1: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'a\'=\'a\' "+comment;
+                           attack=" or \'a\'=\'a\' --";
                            break;
                         }
                         case 2: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" waitfor delay \'00:00:10\' "+comment;
+                           attack=" waitfor delay \'00:00:10\' --";
                            break;
                         }
                      }
@@ -1375,6 +1231,33 @@ public class Sqripta
                }
                String column1 = getString(charList);
 
+//attack intersperse
+               String attack="";
+               if (attacksOn=true) {
+                  attackProb=gen.nextInt(attackInterval);
+                  if (attackProb==0 || attackDesperation==true) {
+                     attackCount++;
+                     int attackType=gen.nextInt(3);
+                     switch (attackType) {
+                        case 0: {
+                           attack=" or \'1\'=\'1\' --";
+                           break;
+                        }
+                        case 1: {
+                           attack=" or \'a\'=\'a\' --";
+                           break;
+                        }
+                        case 2: {
+                           attack=" waitfor delay \'00:00:10\' --";
+                           break;
+                        }
+                     }
+                  }
+               }
+               else {
+               attack="";
+               }
+
 //table1               
                placer=34;
                charList = new ArrayList<Character>();
@@ -1388,7 +1271,7 @@ public class Sqripta
                String table1 = getString(charList);
 
 //write
-               writer.println("SELECT MIN("+column1+") FROM "+table1+";");
+               writer.println("SELECT MIN("+column1+") FROM "+table1+attack+";");
                writer.println("GO");
 
                break;
@@ -1424,42 +1307,22 @@ public class Sqripta
 
 //attack intersperse
                String attack="";
-               String comment="";
                if (attacksOn=true) {
                   attackProb=gen.nextInt(attackInterval);
                   if (attackProb==0 || attackDesperation==true) {
                      attackCount++;
                      int attackType=gen.nextInt(3);
-                     int commentType=gen.nextInt(2);
                      switch (attackType) {
                         case 0: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'1\'=\'1\' "+comment;
+                           attack=" or \'1\'=\'1\' --";
                            break;
                         }
                         case 1: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'a\'=\'a\' "+comment;
+                           attack=" or \'a\'=\'a\' --";
                            break;
                         }
                         case 2: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" waitfor delay \'00:00:10\' "+comment;
+                           attack=" waitfor delay \'00:00:10\' --";
                            break;
                         }
                      }
@@ -1523,46 +1386,29 @@ public class Sqripta
 
 //attack intersperse
                String attack="";
-               String comment="";
                if (attacksOn=true) {
                   attackProb=gen.nextInt(attackInterval);
                   if (attackProb==0 || attackDesperation==true) {
                      attackCount++;
                      int attackType=gen.nextInt(3);
-                     int commentType=gen.nextInt(2);
                      switch (attackType) {
                         case 0: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'1\'=\'1\' "+comment;
+                           attack=" or \'1\'=\'1\' --";
                            break;
                         }
                         case 1: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'a\'=\'a\' "+comment;
+                           attack=" or \'a\'=\'a\' --";
                            break;
                         }
                         case 2: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" waitfor delay \'00:00:10\' "+comment;
+                           attack=" waitfor delay \'00:00:10\' --";
                            break;
                         }
                      }
                   }
+               }
+               else {
+               attack="";
                }
 
 //write
@@ -1619,46 +1465,29 @@ public class Sqripta
 
 //attack intersperse
                String attack="";
-               String comment="";
                if (attacksOn=true) {
                   attackProb=gen.nextInt(attackInterval);
                   if (attackProb==0 || attackDesperation==true) {
                      attackCount++;
                      int attackType=gen.nextInt(3);
-                     int commentType=gen.nextInt(2);
                      switch (attackType) {
                         case 0: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'1\'=\'1\' "+comment;
+                           attack=" or \'1\'=\'1\' --";
                            break;
                         }
                         case 1: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'a\'=\'a\' "+comment;
+                           attack=" or \'a\'=\'a\' --";
                            break;
                         }
                         case 2: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" waitfor delay \'00:00:10\' "+comment;
+                           attack=" waitfor delay \'00:00:10\' --";
                            break;
                         }
                      }
                   }
+               }
+               else {
+               attack="";
                }
 
 //write
@@ -1697,46 +1526,29 @@ public class Sqripta
 
 //attack intersperse
                String attack="";
-               String comment="";
                if (attacksOn=true) {
                   attackProb=gen.nextInt(attackInterval);
                   if (attackProb==0 || attackDesperation==true) {
                      attackCount++;
                      int attackType=gen.nextInt(3);
-                     int commentType=gen.nextInt(2);
                      switch (attackType) {
                         case 0: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'1\'=\'1\' "+comment;
+                           attack=" or \'1\'=\'1\' --";
                            break;
                         }
                         case 1: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'a\'=\'a\' "+comment;
+                           attack=" or \'a\'=\'a\' --";
                            break;
                         }
                         case 2: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" waitfor delay \'00:00:10\' "+comment;
+                           attack=" waitfor delay \'00:00:10\' --";
                            break;
                         }
                      }
                   }
+               }
+               else {
+               attack="";
                }
 
 //write
@@ -1775,46 +1587,29 @@ public class Sqripta
 
 //attack intersperse
                String attack="";
-               String comment="";
                if (attacksOn=true) {
                   attackProb=gen.nextInt(attackInterval);
                   if (attackProb==0 || attackDesperation==true) {
                      attackCount++;
                      int attackType=gen.nextInt(3);
-                     int commentType=gen.nextInt(2);
                      switch (attackType) {
                         case 0: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'1\'=\'1\' "+comment;
+                           attack=" or \'1\'=\'1\' --";
                            break;
                         }
                         case 1: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'a\'=\'a\' "+comment;
+                           attack=" or \'a\'=\'a\' --";
                            break;
                         }
                         case 2: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" waitfor delay \'00:00:10\' "+comment;
+                           attack=" waitfor delay \'00:00:10\' --";
                            break;
                         }
                      }
                   }
+               }
+               else {
+               attack="";
                }
 
 //write
@@ -1870,46 +1665,29 @@ public class Sqripta
 
 //attack intersperse
                String attack="";
-               String comment="";
                if (attacksOn=true) {
                   attackProb=gen.nextInt(attackInterval);
                   if (attackProb==0 || attackDesperation==true) {
                      attackCount++;
                      int attackType=gen.nextInt(3);
-                     int commentType=gen.nextInt(2);
                      switch (attackType) {
                         case 0: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'1\'=\'1\' "+comment;
+                           attack=" or \'1\'=\'1\' --";
                            break;
                         }
                         case 1: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'a\'=\'a\' "+comment;
+                           attack=" or \'a\'=\'a\' --";
                            break;
                         }
                         case 2: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" waitfor delay \'00:00:10\' "+comment;
+                           attack=" waitfor delay \'00:00:10\' --";
                            break;
                         }
                      }
                   }
+               }
+               else {
+               attack="";
                }
 
 //write
@@ -1948,46 +1726,29 @@ public class Sqripta
 
 //attack intersperse
                String attack="";
-               String comment="";
                if (attacksOn=true) {
                   attackProb=gen.nextInt(attackInterval);
                   if (attackProb==0 || attackDesperation==true) {
                      attackCount++;
                      int attackType=gen.nextInt(3);
-                     int commentType=gen.nextInt(2);
                      switch (attackType) {
                         case 0: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'1\'=\'1\' "+comment;
+                           attack=" or \'1\'=\'1\' --";
                            break;
                         }
                         case 1: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'a\'=\'a\' "+comment;
+                           attack=" or \'a\'=\'a\' --";
                            break;
                         }
                         case 2: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" waitfor delay \'00:00:10\' "+comment;
+                           attack=" waitfor delay \'00:00:10\' --";
                            break;
                         }
                      }
                   }
+               }
+               else {
+               attack="";
                }
 
 //write
@@ -2174,46 +1935,29 @@ public class Sqripta
 
 //attack intersperse
                String attack="";
-               String comment="";
                if (attacksOn=true) {
                   attackProb=gen.nextInt(attackInterval);
                   if (attackProb==0 || attackDesperation==true) {
                      attackCount++;
                      int attackType=gen.nextInt(3);
-                     int commentType=gen.nextInt(2);
                      switch (attackType) {
                         case 0: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'1\'=\'1\' "+comment;
+                           attack=" or \'1\'=\'1\' --";
                            break;
                         }
                         case 1: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'a\'=\'a\' "+comment;
+                           attack=" or \'a\'=\'a\' --";
                            break;
                         }
                         case 2: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" waitfor delay \'00:00:10\' "+comment;
+                           attack=" waitfor delay \'00:00:10\' --";
                            break;
                         }
                      }
                   }
+               }
+               else {
+               attack="";
                }
 
 //write
@@ -2273,46 +2017,29 @@ public class Sqripta
 
 //attack intersperse
                String attack="";
-               String comment="";
                if (attacksOn=true) {
                   attackProb=gen.nextInt(attackInterval);
                   if (attackProb==0 || attackDesperation==true) {
                      attackCount++;
                      int attackType=gen.nextInt(3);
-                     int commentType=gen.nextInt(2);
                      switch (attackType) {
                         case 0: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'1\'=\'1\' "+comment;
+                           attack=" or \'1\'=\'1\' --";
                            break;
                         }
                         case 1: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'a\'=\'a\' "+comment;
+                           attack=" or \'a\'=\'a\' --";
                            break;
                         }
                         case 2: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" waitfor delay \'00:00:10\' "+comment;
+                           attack=" waitfor delay \'00:00:10\' --";
                            break;
                         }
                      }
                   }
+               }
+               else {
+               attack="";
                }
 
 //write
@@ -2368,46 +2095,29 @@ public class Sqripta
 
 //attack intersperse
                String attack="";
-               String comment="";
                if (attacksOn=true) {
                   attackProb=gen.nextInt(attackInterval);
                   if (attackProb==0 || attackDesperation==true) {
                      attackCount++;
                      int attackType=gen.nextInt(3);
-                     int commentType=gen.nextInt(2);
                      switch (attackType) {
                         case 0: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'1\'=\'1\' "+comment;
+                           attack=" or \'1\'=\'1\' --";
                            break;
                         }
                         case 1: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'a\'=\'a\' "+comment;
+                           attack=" or \'a\'=\'a\' --";
                            break;
                         }
                         case 2: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" waitfor delay \'00:00:10\' "+comment;
+                           attack=" waitfor delay \'00:00:10\' --";
                            break;
                         }
                      }
                   }
+               }
+               else {
+               attack="";
                }
 
 //write
@@ -2498,46 +2208,29 @@ public class Sqripta
 
 //attack intersperse
                String attack="";
-               String comment="";
                if (attacksOn=true) {
                   attackProb=gen.nextInt(attackInterval);
                   if (attackProb==0 || attackDesperation==true) {
                      attackCount++;
                      int attackType=gen.nextInt(3);
-                     int commentType=gen.nextInt(2);
                      switch (attackType) {
                         case 0: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'1\'=\'1\' "+comment;
+                           attack=" or \'1\'=\'1\' --";
                            break;
                         }
                         case 1: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'a\'=\'a\' "+comment;
+                           attack=" or \'a\'=\'a\' --";
                            break;
                         }
                         case 2: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" waitfor delay \'00:00:10\' "+comment;
+                           attack=" waitfor delay \'00:00:10\' --";
                            break;
                         }
                      }
                   }
+               }
+               else {
+               attack="";
                }
 
 
@@ -2580,46 +2273,29 @@ public class Sqripta
 
 //attack intersperse
                String attack="";
-               String comment="";
                if (attacksOn=true) {
                   attackProb=gen.nextInt(attackInterval);
                   if (attackProb==0 || attackDesperation==true) {
                      attackCount++;
                      int attackType=gen.nextInt(3);
-                     int commentType=gen.nextInt(2);
                      switch (attackType) {
                         case 0: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'1\'=\'1\' "+comment;
+                           attack=" or \'1\'=\'1\' --";
                            break;
                         }
                         case 1: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'a\'=\'a\' "+comment;
+                           attack=" or \'a\'=\'a\' --";
                            break;
                         }
                         case 2: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" waitfor delay \'00:00:10\' "+comment;
+                           attack=" waitfor delay \'00:00:10\' --";
                            break;
                         }
                      }
                   }
+               }
+               else {
+               attack="";
                }
 
 //write
@@ -2736,46 +2412,29 @@ public class Sqripta
 
 //attack intersperse
                String attack="";
-               String comment="";
                if (attacksOn=true) {
                   attackProb=gen.nextInt(attackInterval);
                   if (attackProb==0 || attackDesperation==true) {
                      attackCount++;
                      int attackType=gen.nextInt(3);
-                     int commentType=gen.nextInt(2);
                      switch (attackType) {
                         case 0: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'1\'=\'1\' "+comment;
+                           attack=" or \'1\'=\'1\' --";
                            break;
                         }
                         case 1: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'a\'=\'a\' "+comment;
+                           attack=" or \'a\'=\'a\' --";
                            break;
                         }
                         case 2: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" waitfor delay \'00:00:10\' "+comment;
+                           attack=" waitfor delay \'00:00:10\' --";
                            break;
                         }
                      }
                   }
+               }
+               else {
+               attack="";
                }
 
 //write
@@ -2800,11 +2459,38 @@ public class Sqripta
                }
                String table1 = getString(charList);
 
+//attack intersperse
+               String attack="";
+               if (attacksOn=true) {
+                  attackProb=gen.nextInt(attackInterval);
+                  if (attackProb==0 || attackDesperation==true) {
+                     attackCount++;
+                     int attackType=gen.nextInt(3);
+                     switch (attackType) {
+                        case 0: {
+                           attack=" or \'1\'=\'1\' --";
+                           break;
+                        }
+                        case 1: {
+                           attack=" or \'a\'=\'a\' --";
+                           break;
+                        }
+                        case 2: {
+                           attack=" waitfor delay \'00:00:10\' --";
+                           break;
+                        }
+                     }
+                  }
+               }
+               else {
+               attack="";
+               }
+
 //index
                String index1="PIndex";
 
 //write
-               writer.println("DROP INDEX "+table1+"."+index1+";");
+               writer.println("DROP INDEX "+table1+attack+"."+index1+";");
                writer.println("GO");
 
                break;
@@ -2813,6 +2499,33 @@ public class Sqripta
             {
 //need table
 
+//attack intersperse
+               String attack="";
+               if (attacksOn=true) {
+                  attackProb=gen.nextInt(attackInterval);
+                  if (attackProb==0 || attackDesperation==true) {
+                     attackCount++;
+                     int attackType=gen.nextInt(3);
+                     switch (attackType) {
+                        case 0: {
+                           attack=" or \'1\'=\'1\' --";
+                           break;
+                        }
+                        case 1: {
+                           attack=" or \'a\'=\'a\' --";
+                           break;
+                        }
+                        case 2: {
+                           attack=" waitfor delay \'00:00:10\' --";
+                           break;
+                        }
+                     }
+                  }
+               }
+               else {
+               attack="";
+               }
+
 //table1               
                int placer=34;
                ArrayList<Character> charList = new ArrayList<Character>();
@@ -2826,7 +2539,7 @@ public class Sqripta
                String table1 = getString(charList);
 
 //write
-               writer.println("DROP TABLE "+table1+";");
+               writer.println("DROP TABLE "+table1+attack+";");
                writer.println("GO");
 
                break;
@@ -2835,6 +2548,33 @@ public class Sqripta
             {
 //need table
 
+//attack intersperse
+               String attack="";
+               if (attacksOn=true) {
+                  attackProb=gen.nextInt(attackInterval);
+                  if (attackProb==0 || attackDesperation==true) {
+                     attackCount++;
+                     int attackType=gen.nextInt(3);
+                     switch (attackType) {
+                        case 0: {
+                           attack=" or \'1\'=\'1\' --";
+                           break;
+                        }
+                        case 1: {
+                           attack=" or \'a\'=\'a\' --";
+                           break;
+                        }
+                        case 2: {
+                           attack=" waitfor delay \'00:00:10\' --";
+                           break;
+                        }
+                     }
+                  }
+               }
+               else {
+               attack="";
+               }
+
 //table1               
                int placer=34;
                ArrayList<Character> charList = new ArrayList<Character>();
@@ -2848,7 +2588,7 @@ public class Sqripta
                String table1 = getString(charList);
 
 //write
-               writer.println("TRUNCATE TABLE "+table1+";");
+               writer.println("TRUNCATE TABLE "+table1+attack+";");
                writer.println("GO");
 
                break;
@@ -2934,46 +2674,29 @@ public class Sqripta
 
 //attack intersperse
                String attack="";
-               String comment="";
                if (attacksOn=true) {
                   attackProb=gen.nextInt(attackInterval);
                   if (attackProb==0 || attackDesperation==true) {
                      attackCount++;
                      int attackType=gen.nextInt(3);
-                     int commentType=gen.nextInt(2);
                      switch (attackType) {
                         case 0: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'1\'=\'1\' "+comment;
+                           attack=" or \'1\'=\'1\' --";
                            break;
                         }
                         case 1: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'a\'=\'a\' "+comment;
+                           attack=" or \'a\'=\'a\' --";
                            break;
                         }
                         case 2: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" waitfor delay \'00:00:10\' "+comment;
+                           attack=" waitfor delay \'00:00:10\' --";
                            break;
                         }
                      }
                   }
+               }
+               else {
+               attack="";
                }
 
 
@@ -3013,46 +2736,29 @@ public class Sqripta
 
 //attack intersperse
                String attack="";
-               String comment="";
                if (attacksOn=true) {
                   attackProb=gen.nextInt(attackInterval);
                   if (attackProb==0 || attackDesperation==true) {
                      attackCount++;
                      int attackType=gen.nextInt(3);
-                     int commentType=gen.nextInt(2);
                      switch (attackType) {
                         case 0: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'1\'=\'1\' "+comment;
+                           attack=" or \'1\'=\'1\' --";
                            break;
                         }
                         case 1: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'a\'=\'a\' "+comment;
+                           attack=" or \'a\'=\'a\' --";
                            break;
                         }
                         case 2: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" waitfor delay \'00:00:10\' "+comment;
+                           attack=" waitfor delay \'00:00:10\' --";
                            break;
                         }
                      }
                   }
+               }
+               else {
+               attack="";
                }
 
 //write
@@ -3143,46 +2849,29 @@ public class Sqripta
 
 //attack intersperse
                String attack="";
-               String comment="";
                if (attacksOn=true) {
                   attackProb=gen.nextInt(attackInterval);
                   if (attackProb==0 || attackDesperation==true) {
                      attackCount++;
                      int attackType=gen.nextInt(3);
-                     int commentType=gen.nextInt(2);
                      switch (attackType) {
                         case 0: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'1\'=\'1\' "+comment;
+                           attack=" or \'1\'=\'1\' --";
                            break;
                         }
                         case 1: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" or \'a\'=\'a\' "+comment;
+                           attack=" or \'a\'=\'a\' --";
                            break;
                         }
                         case 2: {
-                           if (commentType==0) {
-                              comment="--";
-                           }
-                           else {
-                              comment="/*";
-                           }
-                           attack=" waitfor delay \'00:00:10\' "+comment;
+                           attack=" waitfor delay \'00:00:10\' --";
                            break;
                         }
                      }
                   }
+               }
+               else {
+               attack="";
                }
 
 
@@ -3197,8 +2886,35 @@ public class Sqripta
             {
 //need database (Adventureworks2012)
 
+//attack intersperse
+               String attack="";
+               if (attacksOn=true) {
+                  attackProb=gen.nextInt(attackInterval);
+                  if (attackProb==0 || attackDesperation==true) {
+                     attackCount++;
+                     int attackType=gen.nextInt(3);
+                     switch (attackType) {
+                        case 0: {
+                           attack=" or \'1\'=\'1\' --";
+                           break;
+                        }
+                        case 1: {
+                           attack=" or \'a\'=\'a\' --";
+                           break;
+                        }
+                        case 2: {
+                           attack=" waitfor delay \'00:00:10\' --";
+                           break;
+                        }
+                     }
+                  }
+               }
+               else {
+               attack="";
+               }
+
 //write
-               writer.println("DROP DATABASE "+dbName+";");
+               writer.println("DROP DATABASE "+dbName+attack+";");
                writer.println("GO");
 
                break;
