@@ -27,7 +27,7 @@ public class Sqripta
       do {
          System.out.print("Number of statements to write(integer): ");
          numberStatements = keyboard.nextInt();
-      } while (numberStatements<1);
+      } while (numberStatements<1 || numberStatements>3000000);
       int statementCount=0;
 
       keyboard.nextLine();
@@ -123,7 +123,7 @@ public class Sqripta
 //attack intersperse
                String attack="";
                if (attacksOn=true) {
-                  attackProb=gen.nextInt(attackInterval);
+                  attackProb=gen.nextInt(attackInterval-1);
                   if (attackProb==0 || attackDesperation==true) {
                      attackCount++;
                      int attackType=gen.nextInt(3);
@@ -305,7 +305,7 @@ public class Sqripta
 //attack intersperse
                String attack="";
                if (attacksOn=true) {
-                  attackProb=gen.nextInt(attackInterval);
+                  attackProb=gen.nextInt(attackInterval-1);
                   if (attackProb==0 || attackDesperation==true) {
                      attackCount++;
                      int attackType=gen.nextInt(3);
@@ -495,7 +495,7 @@ public class Sqripta
 //attack intersperse
                String attack="";
                if (attacksOn=true) {
-                  attackProb=gen.nextInt(attackInterval);
+                  attackProb=gen.nextInt(attackInterval-1);
                   if (attackProb==0 || attackDesperation==true) {
                      attackCount++;
                      int attackType=gen.nextInt(3);
@@ -605,7 +605,7 @@ public class Sqripta
 //attack intersperse
                String attack="";
                if (attacksOn=true) {
-                  attackProb=gen.nextInt(attackInterval);
+                  attackProb=gen.nextInt(attackInterval-1);
                   if (attackProb==0 || attackDesperation==true) {
                      attackCount++;
                      int attackType=gen.nextInt(3);
@@ -689,7 +689,7 @@ public class Sqripta
 //attack intersperse
                String attack="";
                if (attacksOn=true) {
-                  attackProb=gen.nextInt(attackInterval);
+                  attackProb=gen.nextInt(attackInterval-1);
                   if (attackProb==0 || attackDesperation==true) {
                      attackCount++;
                      int attackType=gen.nextInt(3);
@@ -756,7 +756,7 @@ public class Sqripta
 //attack intersperse
                String attack="";
                if (attacksOn=true) {
-                  attackProb=gen.nextInt(attackInterval);
+                  attackProb=gen.nextInt(attackInterval-1);
                   if (attackProb==0 || attackDesperation==true) {
                      attackCount++;
                      int attackType=gen.nextInt(3);
@@ -834,7 +834,7 @@ public class Sqripta
 //attack intersperse
                String attack="";
                if (attacksOn=true) {
-                  attackProb=gen.nextInt(attackInterval);
+                  attackProb=gen.nextInt(attackInterval-1);
                   if (attackProb==0 || attackDesperation==true) {
                      attackCount++;
                      int attackType=gen.nextInt(3);
@@ -898,7 +898,7 @@ public class Sqripta
 //attack intersperse
                String attack="";
                if (attacksOn=true) {
-                  attackProb=gen.nextInt(attackInterval);
+                  attackProb=gen.nextInt(attackInterval-1);
                   if (attackProb==0 || attackDesperation==true) {
                      attackCount++;
                      int attackType=gen.nextInt(3);
@@ -989,7 +989,7 @@ public class Sqripta
 //attack intersperse
                String attack="";
                if (attacksOn=true) {
-                  attackProb=gen.nextInt(attackInterval);
+                  attackProb=gen.nextInt(attackInterval-1);
                   if (attackProb==0 || attackDesperation==true) {
                      attackCount++;
                      int attackType=gen.nextInt(3);
