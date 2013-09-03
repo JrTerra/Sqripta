@@ -178,7 +178,6 @@
                }
 
 
-
 //adding "NOT" clause
                int notId=gen.nextInt(2);
                String not="";
