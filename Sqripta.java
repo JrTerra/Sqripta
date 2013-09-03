@@ -95,7 +95,7 @@ public class Sqripta
          {
             case 0:
             {
-//need table1,column1,column2,two values,schema
+//need table1,column1,column2,two values,schema1
 
 //column1
                int placer = 68;
@@ -291,7 +291,7 @@ public class Sqripta
             }
             case 1:
             {
-//need table,column1,column2,twovalues,schema
+//need table,column1,column2,twovalues,schema1
 
 //table1               
                int placer=34;
