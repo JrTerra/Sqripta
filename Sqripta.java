@@ -32,26 +32,28 @@ public class Sqripta
 
       keyboard.nextLine();
 //determine type of statements to write
-      String dbDropper="";
+      String dbDropper1="";
+      String dbDropper2="";
       do {
          System.out.print("Exclude dangerous statements(y/n): ");
-         dbDropper = keyboard.nextLine();
-         dbDropper.toLowerCase();
-      } while (dbDropper.charAt(0)!='y' && dbDropper.charAt(0)!='n');
+         dbDropper1 = keyboard.nextLine();
+         dbDropper2=dbDropper1.toLowerCase();
+      } while (dbDropper2.charAt(0)!='y' && dbDropper2.charAt(0)!='n');
 
 //determine include attacks
       boolean attacksOn=false;
       int numberAttacks=0;
       int attackCount=0;
       int attackInterval=0;
-      String attackInput="";
+      String attackInput1="";
+      String attackInput2="";
       do {
          System.out.print("Include attacks(y/n): ");
-         attackInput=keyboard.nextLine();
-         attackInput.toUpperCase();
-      } while (attackInput.charAt(0)!='Y' && attackInput.charAt(0)!='Y');
+         attackInput1=keyboard.nextLine();
+         attackInput2=attackInput1.toLowerCase();
+      } while (attackInput2.charAt(0)!='y' && attackInput2.charAt(0)!='n');
 
-      if (attackInput.charAt(0)=='Y') {
+      if (attackInput2.charAt(0)=='y') {
          attacksOn=true;
          do {
             System.out.print("Number of attacks to intersperse(integer): ");
@@ -60,16 +62,21 @@ public class Sqripta
          attackInterval=numberStatements/numberAttacks;
          keyboard.nextLine();
       }
+      else {
+         attacksOn=false;
+      }
 
       System.out.print("Enter name of DB: ");
       String dbName=keyboard.nextLine();
-      writer.println("USE ["+dbName+"]");
-      writer.println("GO");
       boolean attackDesperation=false;
       int attackProb=0;
 
 
-      PrintWriter writer = new PrintWriter(numberStatements+"_"+"attacks_"+attackInput+".sql");
+      PrintWriter writer = new PrintWriter(numberStatements+"_"+"attacks_"+attackInput2+".sql");
+
+      writer.println("USE ["+dbName+"]");
+      writer.println("GO");
+
 
       for(int j=0;j<numberStatements;j++)
       {
@@ -83,7 +90,7 @@ public class Sqripta
             }
          }
          int statementType=0;
-         if (dbDropper.charAt(0)=='y') {
+         if (dbDropper2.charAt(0)=='y') {
             statementType = gen.nextInt(25);
          }
          else {
@@ -91,6 +98,14 @@ public class Sqripta
          }
          int num = gen.nextInt(566);                                //pick random line from input text
          String line = lines[num];                                  //write random line to local variable
+
+//avoiding drop DB statements
+         if(statementType==32) {
+            int reRoll=gen.nextInt(1001);
+            if(reRoll!=0) {
+               statementType=gen.nextInt(32);
+            }
+         }
          switch(statementType)
          {
             case 0:
@@ -284,7 +299,7 @@ public class Sqripta
                String schema1=getString(charList);
 
 //write
-               writer.println("SELECT "+column1+" FROM "+table1+"."+schema1+" WHERE "+column2+attack+not+" BETWEEN "+value1+" AND "+value2+";");
+               writer.println("SELECT ["+column1+"] FROM ["+schema1+"].["+table1+"] WHERE ["+column2+"]"+attack+not+" BETWEEN "+value1+" AND "+value2+";");
                writer.println("GO");
 
                break;
@@ -479,7 +494,7 @@ public class Sqripta
                String schema1=getString(charList);
 
 //write
-               writer.println("SELECT "+column1+" FROM "+table1+"."+schema1+" WHERE "+column2+attack+not+" IN ("+value1+","+value2+");");
+               writer.println("SELECT ["+column1+"] FROM ["+schema1+"].["+table1+"] WHERE ["+column2+"]"+attack+not+" IN ("+value1+","+value2+");");
                writer.println("GO");
 
                break;
@@ -583,7 +598,7 @@ public class Sqripta
                String schema1=getString(charList);
 
 //write
-               writer.println("SELECT "+column1+" FROM "+table1+"."+schema1+" WHERE "+column2+attack+not+" LIKE "+pattern+";");
+               writer.println("SELECT ["+column1+"] FROM ["+schema1+"].["+table1+"] WHERE "+column2+"]"+attack+not+" LIKE "+pattern+";");
                writer.println("GO");
 
                break;
@@ -703,7 +718,7 @@ public class Sqripta
                String schema1=getString(charList);
 
 //write
-               writer.println("SELECT "+column1+" FROM "+table+"."+schema1+" ORDER BY "+column3+attack+","+column2+" "+ordering+";");
+               writer.println("SELECT ["+column1+"] FROM ["+schema1+"].["+table1+attack+"] ORDER BY ["+column3+"],["+column2+"] "+ordering+";");
                writer.println("GO");
 
                break;
@@ -794,7 +809,7 @@ public class Sqripta
                String schema1=getString(charList);
 
 //write
-               writer.println("SELECT "+column1+", "+column2+attack+", FORMAT(Now(),\'YYYY-MM-DD\') FROM "+table1+"."+schema1+";");
+               writer.println("SELECT ["+column1+"], ["+column2+attack+"], FORMAT(Now(),\'YYYY-MM-DD\') FROM ["+schema1+"].["+table1+"];");
                writer.println("GO");
 
                break;
@@ -867,7 +882,7 @@ public class Sqripta
                String schema1=getString(charList);
 
 //write
-               writer.println("SELECT "+column1+" NOW() FROM "+table1+attack+"."+schema1+";");
+               writer.println("SELECT ["+column1+"] NOW() FROM ["+schema1+"].["+table1+attack+"];");
                writer.println("GO");
 
                break;
@@ -960,7 +975,7 @@ public class Sqripta
                int numDecimals=gen.nextInt(3);
 
 //write
-               writer.println("SELECT "+column1+attack+", ROUND("+column2+","+numDecimals+") FROM "+table1+"."+schema1+";");
+               writer.println("SELECT ["+column1+attack+"], ROUND(["+column2+"],"+numDecimals+") FROM ["+schema1+"].["+table1+"];");
                writer.println("GO");
 
                break;
@@ -1051,7 +1066,7 @@ public class Sqripta
                String schema1=getString(charList);
 
 //write
-               writer.println("SELECT "+column1+", LEN("+column2+attack+") FROM "+table1+"."+schema1+";");
+               writer.println("SELECT ["+column1+"], LEN(["+column2+attack+"]) FROM ["+schema1+"].["+table1+"];");
                writer.println("GO");
 
                break;
@@ -1130,7 +1145,7 @@ public class Sqripta
                int lengthFinder=gen.nextInt(100)+1;
 
 //write
-               writer.println("SELECT MID("+column1+","+starter+","+lengthFinder+") FROM "+table1+attack+"."+schema1+";");
+               writer.println("SELECT MID(["+column1+"],"+starter+","+lengthFinder+") FROM ["+schema1+"].["+table1+attack+"];");
                writer.println("GO");
 
                break;
@@ -1203,7 +1218,7 @@ public class Sqripta
                String schema1=getString(charList);
 
 //write
-               writer.println("SELECT LOWER("+column1+") FROM "+table1+attack+"."+schema1+";");
+               writer.println("SELECT LOWER(["+column1+attack+"]) FROM ["+schema1+"].["+table1+"];");
                writer.println("GO");
 
                break;
@@ -1277,7 +1292,7 @@ public class Sqripta
                String schema1=getString(charList);
 
 //write
-               writer.println("SELECT UPPER("+column1+") FROM "+table1+attack+"."+schema1+";");
+               writer.println("SELECT UPPER(["+column1+attack+"]) FROM ["+schema1+"].["+table1+"];");
                writer.println("GO");
 
                break;
@@ -1351,7 +1366,7 @@ public class Sqripta
                String schema1=getString(charList);
 
 //write
-               writer.println("SELECT SUM("+column1+") FROM "+table1+attack+"."+schema1+";");
+               writer.println("SELECT SUM(["+column1+attack+"]) FROM ["+schema1+"].["+table1+"];");
                writer.println("GO");
 
                break;
@@ -1425,7 +1440,7 @@ public class Sqripta
                String schema1=getString(charList);
 
 //write
-               writer.println("SELECT MIN("+column1+") FROM "+table1+attack+"."+schema1+";");
+               writer.println("SELECT MIN(["+column1+attack+"]) FROM ["+schema1+"].["+table1+"];");
                writer.println("GO");
 
                break;
@@ -1499,7 +1514,7 @@ public class Sqripta
                String schema1=getString(charList);
 
 //write
-               writer.println("SELECT MAX("+column1+") FROM "+table1+attack+"."+schema1+";");
+               writer.println("SELECT MAX(["+column1+attack+"]) FROM ["+schema1+"].["+table1+"];");
                writer.println("GO");
 
                break;
@@ -1590,7 +1605,7 @@ public class Sqripta
                String schema1=getString(charList);
 
 //write
-               writer.println("SELECT TOP 1 "+column1+" FROM "+table1+"."+schema1+" ORDER BY "+column2+attack+" DESC;");
+               writer.println("SELECT TOP 1 ["+column1+attack+"] FROM ["+schema1+"].["+table1+"] ORDER BY ["+column2+"] DESC;");
                writer.println("GO");
 
                break;
@@ -1681,7 +1696,7 @@ public class Sqripta
                String schema1=getString(charList);
 
 //write
-               writer.println("SELECT TOP 1 "+column1+" FROM "+table1+"."+schema1+" ORDER BY "+column2+attack+" ASC;");
+               writer.println("SELECT TOP 1 ["+column1+attack+"] FROM ["+schema1+"].["+table1+"] ORDER BY ["+column2+"] ASC;");
                writer.println("GO");
 
                break;
@@ -1754,7 +1769,7 @@ public class Sqripta
                String schema1=getString(charList);
 
 //write
-               writer.println("SELECT COUNT(DISTINCT "+column1+") FROM "+table1+attack+"."+schema1+";");
+               writer.println("SELECT COUNT(DISTINCT ["+column1+attack+"]) FROM ["+schema1+"].["+table1+"];");
                writer.println("GO");
 
                break;
@@ -1827,7 +1842,7 @@ public class Sqripta
                String schema1=getString(charList);
 
 //write
-               writer.println("SELECT AVG("+column1+") FROM "+table1+attack+"."+schema1+";");
+               writer.println("SELECT AVG(["+column1+attack+"]) FROM ["+schema1+"].["+table1+"];");
                writer.println("GO");
 
                break;
@@ -1929,7 +1944,7 @@ public class Sqripta
                String schema2=getString(charList);
 
 //write
-               writer.println("SELECT "+column1+" INTO "+table2+"."+schema2+" FROM "+table1+attack+"."+schema1+";");
+               writer.println("SELECT ["+column1+attack+"] INTO ["+schema2+"].["+table2+"] FROM ["+schema1+"].["+table1+"];");
                writer.println("GO");
 
                break;
@@ -2002,7 +2017,7 @@ public class Sqripta
                String schema1=getString(charList);
 
 //write
-               writer.println("SELECT DISTINCT "+column1+" FROM "+table1+attack+"."+schema1+";");
+               writer.println("SELECT DISTINCT ["+column1+attack+"] FROM ["+schema1+"].["+table1+"];");
                writer.println("GO");
 
                break;
@@ -2223,7 +2238,7 @@ public class Sqripta
                String schema1=getString(charList);
 
 //write
-               writer.println("UPDATE "+table1+"."+schema1+" SET "+column1+"=\'"+value1+"\', "+column2+"=\'"+value2+"\' WHERE "+column3+attack+" LIKE "+pattern+";");
+               writer.println("UPDATE ["+schema1+"].["+table1+"] SET ["+column1+"]=\'"+value1+"\', ["+column2+"]=\'"+value2+"\' WHERE ["+column3+attack+"] LIKE "+pattern+";");
                writer.println("GO");
 
                break;
@@ -2317,7 +2332,7 @@ public class Sqripta
                String schema1=getString(charList);
 
 //write
-               writer.println("INSERT INTO "+table1+"."+schema1+" ("+column1+","+column2+attack+") VALUES (\'"+value1+"\', \'"+value2+"\');");
+               writer.println("INSERT INTO ["+schema1+"].["+table1+"] (["+column1+"],["+column2+attack+"]) VALUES (\'"+value1+"\', \'"+value2+"\');");
                writer.println("GO");
 
                break;
@@ -2419,7 +2434,7 @@ public class Sqripta
                String schema2=getString(charList);
 
 //write
-               writer.println("INSERT INTO "+table1+"."+schema1+" SELECT "+column1+" FROM "+table2+attack+"."+schema2+";");
+               writer.println("INSERT INTO ["+schema1+"].["+table1+"] SELECT ["+column1+attack+"] FROM ["+schema2+"].["+table2+"];");
                writer.println("GO");
 
                break;
@@ -2544,7 +2559,7 @@ public class Sqripta
                String schema1=getString(charList);
 
 //write
-               writer.println("ALTER TABLE "+table1+"."+schema1+" ALTER COLUMN "+column1+attack+" "+dataType1+";");
+               writer.println("ALTER TABLE ["+schema1+"].["+table1+"] ALTER COLUMN ["+column1+attack+"] "+dataType1+";");
                writer.println("GO");
 
                break;
@@ -2620,7 +2635,7 @@ public class Sqripta
                String schema1=getString(charList);
 
 //write
-               writer.println("CREATE INDEX "+index1+" ON "+table1+"."+schema1+"("+column1+attack+");");
+               writer.println("CREATE INDEX ["+index1+"] ON ["+schema1+"].["+table1+"](["+column1+attack+"]);");
                writer.println("GO");
 
                break;
@@ -2771,7 +2786,7 @@ public class Sqripta
                String schema1=getString(charList);
 
 //write
-               writer.println("DELETE FROM "+table1+"."+schema1+" WHERE "+column1+"="+value1+attack+";");
+               writer.println("DELETE FROM ["+schema1+"].["+table1+"] WHERE ["+column1+"]="+value1+attack+";");
                writer.println("GO");
                break;
             }
@@ -2835,7 +2850,7 @@ public class Sqripta
                String schema1=getString(charList);
 
 //write
-               writer.println("DROP INDEX "+table1+attack+"."+schema1+"."+index1+";");
+               writer.println("DROP INDEX ["+schema1+"].["+table1+"].["+index1+attack+"];");
                writer.println("GO");
 
                break;
@@ -2871,18 +2886,6 @@ public class Sqripta
                attack="";
                }
 
-//schema1
-               placer=19;
-               charList = new ArrayList<Character>();
-               for(int i=0;i<=40;i++) {
-                  if(line.charAt(placer)==' '||line.charAt(placer)==',') {
-                     break;
-                  }
-                  charList.add(line.charAt(placer));
-                  placer++;
-               }
-               String schema1=getString(charList);
-
 //table1               
                int placer=34;
                ArrayList<Character> charList = new ArrayList<Character>();
@@ -2895,8 +2898,20 @@ public class Sqripta
                }
                String table1 = getString(charList);
 
+//schema1
+               placer=19;
+               charList = new ArrayList<Character>();
+               for(int i=0;i<=40;i++) {
+                  if(line.charAt(placer)==' '||line.charAt(placer)==',') {
+                     break;
+                  }
+                  charList.add(line.charAt(placer));
+                  placer++;
+               }
+               String schema1=getString(charList);
+
 //write
-               writer.println("DROP TABLE "+table1+attack+"."+schema1+";");
+               writer.println("DROP TABLE ["+schema1+"].["+table1+attack+"];");
                writer.println("GO");
 
                break;
@@ -2957,7 +2972,7 @@ public class Sqripta
                String schema1=getString(charList);
 
 //write
-               writer.println("TRUNCATE TABLE "+table1+attack+"."+schema1+";");
+               writer.println("TRUNCATE TABLE ["+schema1+"].["+table1+attack+"];");
                writer.println("GO");
 
                break;
@@ -3081,7 +3096,7 @@ public class Sqripta
                String schema1=getString(charList);
 
 //write
-               writer.println("ALTER TABLE "+table1+"."+schema1+attack+" ADD "+column1+" "+dataType1+";");
+               writer.println("ALTER TABLE ["+schema1+"].["+table1+attack+"] ADD ["+column1+"] "+dataType1+";");
                writer.println("GO");
 
                break;
@@ -3154,7 +3169,7 @@ public class Sqripta
                String schema1=getString(charList);
 
 //write
-               writer.println("ALTER TABLE "+table1+"."+schema1+attack+" DROP COLUMN "+column1+";");
+               writer.println("ALTER TABLE ["+schema1+"].["+table1+attack+"] DROP COLUMN ["+column1+"];");
                writer.println("GO");
 
                break;
@@ -3279,7 +3294,7 @@ public class Sqripta
                String schema1=getString(charList);
 
 //write
-               writer.println("ALTER TABLE "+table1+"."+schema1+attack+" MODIFY "+column1+" "+data1+";");
+               writer.println("ALTER TABLE ["+schema1+"].["+table1+attack+"] MODIFY ["+column1+"] "+dataType1+";");
                writer.println("GO");
 
                break;
@@ -3317,7 +3332,7 @@ public class Sqripta
                }
 
 //write
-               writer.println("DROP DATABASE "+dbName+attack+";");
+               writer.println("DROP DATABASE ["+dbName+"]"+attack+";");
                writer.println("GO");
 
                break;
@@ -3326,12 +3341,19 @@ public class Sqripta
          }
          statementCount++;
 
-
       }
       writer.close();
       //outputFile.close();
       System.out.println("Finished.");
-      System.out.println(attackCount+" attacks were included out of "+numberAttacks+", out of "+numberStatements+".");
+      if(attackCount>1) {
+         System.out.println(attackCount+" attacks were included out of "+numberAttacks+", out of "+numberStatements+".");
+      }
+      else if(attackCount==1) {
+         System.out.println(attackCount+" attack was included out of "+numberAttacks+", out of "+numberStatements+".");
+      }
+      else {
+         System.out.println(numberStatements+" statements were written, without attacks.");
+      }
 
 
    }
