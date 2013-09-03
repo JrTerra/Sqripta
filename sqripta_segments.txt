@@ -1,0 +1,219 @@
+//column1
+               int placer = 68;
+               ArrayList<Character> charList = new ArrayList<Character>();
+               for(int i=0;i<=40;i++) {                                         //loop to populate charList
+                  if(line.charAt(placer)==' ' || line.charAt(placer)==',') {    //from line
+                     break;
+                  }
+                  charList.add(line.charAt(placer));
+                  placer++;
+               }
+               String column1 = getString(charList);
+
+//attack intersperse
+               String attack="";
+               if (attacksOn) {
+                  attackProb=gen.nextInt(attackInterval);
+                  if (attackProb==0 || attackDesperation) {
+                     attackCount++;
+                     int attackType=gen.nextInt(3);
+                     switch (attackType) {
+                        case 0: {
+                           attack=" or \'1\'=\'1\' --";
+                           break;
+                        }
+                        case 1: {
+                           attack=" or \'a\'=\'a\' --";
+                           break;
+                        }
+                        case 2: {
+                           attack=" waitfor delay \'00:00:10\' --";
+                           break;
+                        }
+                     }
+                  }
+               }
+               else {
+               attack="";
+               }
+                  
+
+//table1               
+               placer=34;
+               charList = new ArrayList<Character>();
+               for(int i=0;i<=40;i++) {                                       //loop to populate char array
+                  if(line.charAt(placer)==' '||line.charAt(placer)==',') {    //from table area of string
+                     break;
+                  }
+                  charList.add(line.charAt(placer));
+                  placer++;
+               }
+               String table1 = getString(charList);
+
+//schema1
+               placer=19;
+               charList = new ArrayList<Character>();
+               for(int i=0;i<=40;i++) {
+                  if(line.charAt(placer)==' '||line.charAt(placer)==',') {
+                     break;
+                  }
+                  charList.add(line.charAt(placer));
+                  placer++;
+               }
+               String schema1=getString(charList);
+
+//datatyping
+               placer=99;
+               char dataType = line.charAt(placer);
+
+//pattern
+               final String ALPHABET="0123456789abcdefghijklmnopqrstuvwxyz";
+               int alphaLength=ALPHABET.length();
+               String pattern="\'%"+(ALPHABET.charAt(gen.nextInt(alphaLength)))+"\'";
+
+
+//values
+               
+               switch(dataType)
+               {
+                  case 'n':
+                  {
+                     String value1="A";
+                     String value2="Z";
+                     String value3="0";
+                     String value4="9";
+                     writer.println("SELECT * FROM "+table+" WHERE "+column+not+" BETWEEN "+value1+" AND "+value2+";");
+                     writer.println("GO");
+                     break;
+                  }
+                  case 's':
+                  {
+                     int value1=gen.nextInt(32768);
+                     int value2=gen.nextInt(32768);
+                     writer.println("SELECT * FROM "+table+" WHERE "+column+not+" BETWEEN "+value1+" AND "+value2+";");
+                     writer.println("GO");
+                     break;
+                  }
+                  case 'i':
+                  {
+                     int value1=gen.nextInt(1000);
+                     int value2=gen.nextInt(1000);
+                     writer.println("SELECT * FROM "+table+" WHERE "+column+not+" BETWEEN "+value1+" AND "+value2+";");
+                     writer.println("GO");
+                     break;
+                  }
+                  case 'd':
+                  {
+                     if(line.charAt(placer+1)=='e') {
+                        double value1=((double)gen.nextInt(10000))/100.0;
+                        double value2=((double)gen.nextInt(10000))/100.0;
+                     writer.println("SELECT * FROM "+table+" WHERE "+column+not+" BETWEEN "+value1+" AND "+value2+";");
+                     writer.println("GO");
+                     }
+                     else {
+                        int year1=gen.nextInt(64) + 1950;
+                        int month1=gen.nextInt(12) + 1;
+                        int day1;
+                        if (month1==1||month1==3||month1==5||month1==7||month1==8||month1==10||month1==12) {
+                           day1 = gen.nextInt(31) + 1;
+                        }
+                        else if (month1==2 && year1%4==0) {
+                           day1=gen.nextInt(29)+1;
+                        }
+                        else if (month1==2 && year1%4!=0) {
+                           day1=gen.nextInt(28)+1;
+                        }
+                        else {
+                           day1=gen.nextInt(30)+1;
+                        }
+                        int year2=gen.nextInt(64) + 1950;
+                        int month2=gen.nextInt(12) + 1;
+                        int day2;
+                        if (month2==1||month2==3||month2==5||month2==7||month2==8||month2==10||month2==12) {
+                           day2 = gen.nextInt(31) + 1;
+                        }
+                        else if (month2==2 && year2%4==0) {
+                           day2=gen.nextInt(29)+1;
+                        }
+                        else if (month2==2 && year2%4!=0) {
+                           day2=gen.nextInt(28)+1;
+                        }
+                        else {
+                           day2=gen.nextInt(30)+1;
+                        }
+                        writer.println("SELECT * FROM "+table+" WHERE "+column++not+" BETWEEN "+year1+"-"+month1+"-"+day1+" AND "+year2+"-"+month2+"-"+day2+";");
+                        writer.println("GO");
+                     }
+                     break;
+                  }
+                  case 'm':
+                  {
+                     double value1=((double)gen.nextInt(10000))/100.0;
+                     double value2=((double)gen.nextInt(10000))/100.0;
+                     writer.println("SELECT * FROM "+table+" WHERE "+column+not+" BETWEEN "+value1+" AND "+value2+";");
+                     writer.println("GO");
+                     break;
+                  }
+                  case 't':
+                  {
+                     if(line.charAt(placer+2)=='m') {
+                        int hour1=gen.nextInt(24);
+                        int minute1=gen.nextInt(60);
+                        int hour2=gen.nextInt(24);
+                        int minute2=gen.nextInt(60);
+                        String value1=hour1+":"+minute1;
+                        String value2=hour2+":"+minute2;
+                        writer.println("SELECT * FROM "+table+" WHERE "+column+not+" BETWEEN "+value1+" AND "+value2+";");
+                        writer.println("GO");
+                        break;
+                     }
+                     else {
+                        int value1=gen.nextInt(256);
+                        int value2=gen.nextInt(256);
+                        writer.println("SELECT * FROM "+table+" WHERE "+column+not+" BETWEEN "+value1+" AND "+value2+";");
+                        writer.println("GO");
+                        break;
+                     }
+                  }
+               }
+
+
+
+//adding "NOT" clause
+               int notId=gen.nextInt(2);
+               String not="";
+               if (notId==0) {
+                  not=" NOT";
+               }
+
+
+//generate new line to get new column/table
+
+               int num2=gen.nextInt(573);
+               String line2=lines[num2];
+
+//column2
+               placer = 68;
+               charList = new ArrayList<Character>();
+               for(int i=0;i<=40;i++) {                                         //loop to populate charList
+                  if(line2.charAt(placer)==' ' || line2.charAt(placer)==',') {    //from line
+                     break;
+                  }
+                  charList.add(line2.charAt(placer));
+                  placer++;
+               }
+               String column = getString(charList);
+
+//table2               
+               placer=34;
+               charList = new ArrayList<Character>();
+               for(int i=0;i<=40;i++) {                                       //loop to populate char array
+                  if(line2.charAt(placer)==' '||line2.charAt(placer)==',') {    //from table area of string
+                     break;
+                  }
+                  charList.add(line2.charAt(placer));
+                  placer++;
+               }
+               String table2 = getString(charList);
+
+
